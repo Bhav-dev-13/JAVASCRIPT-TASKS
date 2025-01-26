@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Comparisons</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-3xl mx-auto py-10">
+        <h1 class="text-3xl font-bold text-center mb-5">JAVA SCRIPT,OPERATORS,PROMPT,TYPE CONVERSION.
+        </h1>
+
+        <div class="space-y-6">
+            <!-- Age Check -->
+            <div class="p-4 bg-white rounded shadow">
+                <h2 class="text-xl font-semibold mb-2">Check if You are a Minor or an Adult</h2>
+                <input id="ageInput" type="number" placeholder="Enter your age" class="border p-2 w-full rounded mb-2">
+                <button id="ageCheckBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Check</button>
+                <p id="ageResult" class="mt-3 text-lg font-medium"></p>
+            </div>
+
+            <!-- Temperature Check -->
+            <div class="p-4 bg-white rounded shadow">
+                <h2 class="text-xl font-semibold mb-2">Check Temperature Status</h2>
+                <input id="tempInput" type="number" placeholder="Enter temperature (°C)" class="border p-2 w-full rounded mb-2">
+                <button id="tempCheckBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Check</button>
+                <p id="tempResult" class="mt-3 text-lg font-medium"></p>
+            </div>
+
+            <!-- Grade Check -->
+            <div class="p-4 bg-white rounded shadow">
+                <h2 class="text-xl font-semibold mb-2">Grade Calculator</h2>
+                <input id="marksInput" type="number" placeholder="Enter your marks" class="border p-2 w-full rounded mb-2">
+                <button id="marksCheckBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Grade</button>
+                <p id="marksResult" class="mt-3 text-lg font-medium"></p>
+            </div>
+
+            <!-- Even or Odd Check -->
+            <div class="p-4 bg-white rounded shadow">
+                <h2 class="text-xl font-semibold mb-2">Check Even or Odd</h2>
+                <input id="numberInput" type="number" placeholder="Enter a number" class="border p-2 w-full rounded mb-2">
+                <button id="numberCheckBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Check</button>
+                <p id="numberResult" class="mt-3 text-lg font-medium"></p>
+            </div>
+
+            <!-- Comparison Operators -->
+            <div class="p-4 bg-white rounded shadow">
+                <h2 class="text-xl font-semibold mb-2">Comparison Operators Demo</h2>
+                <div class="space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <label for="val1" class="w-20 font-medium">Value 1:</label>
+                        <input id="val1" type="text" placeholder="Enter first value" class="border p-2 w-full rounded">
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <label for="val2" class="w-20 font-medium">Value 2:</label>
+                        <input id="val2" type="text" placeholder="Enter second value" class="border p-2 w-full rounded">
+                    </div>
+                    <button id="compareBtn" class="bg-blue-500 text-white px-4 py-2 rounded mt-3">Compare</button>
+                    <div id="comparisonResult" class="mt-3 text-lg font-medium"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Age Check
+        document.getElementById("ageCheckBtn").addEventListener("click", function() {
+            const age = parseInt(document.getElementById("ageInput").value);
+            const result = age <= 12 ? "You are a Child" :
+                           age <= 19 ? "You are a Teenager" :
+                           age <= 64 ? "You are an Adult" : "You are a Senior";
+            document.getElementById("ageResult").textContent = result;
+        });
+
+        // Temperature Check
+        document.getElementById("tempCheckBtn").addEventListener("click", function() {
+            const temp = parseInt(document.getElementById("tempInput").value);
+            const result = temp > 30 ? "Hot" :
+                           temp >= 20 ? "Warm" :
+                           temp >= 10 ? "Cool" : "Cold";
+            document.getElementById("tempResult").textContent = result;
+        });
+
+        // Grade Check
+        document.getElementById("marksCheckBtn").addEventListener("click", function() {
+            const marks = parseInt(document.getElementById("marksInput").value);
+            const result = marks >= 90 ? "A Grade" :
+                           marks >= 75 ? "B Grade" :
+                           marks >= 60 ? "C Grade" :
+                           marks >= 45 ? "D Grade" : "F Grade";
+            document.getElementById("marksResult").textContent = result;
+        });
+
+        // Even or Odd Check
+        document.getElementById("numberCheckBtn").addEventListener("click", function() {
+            const number = parseInt(document.getElementById("numberInput").value);
+            const result = number % 2 === 0 ? "Even Number" : "Odd Number";
+            document.getElementById("numberResult").textContent = result;
+        });
+
+        // Comparison Operators Demo
+        document.getElementById("compareBtn").addEventListener("click", function() {
+            const val1 = document.getElementById("val1").value;
+            const val2 = document.getElementById("val2").value;
+            const results = [
+                `== : ${val1 == val2}`,
+                `=== : ${val1 === val2}`,
+                `!= : ${val1 != val2}`,
+                `!== : ${val1 !== val2}`,
+                `> : ${val1 > val2}`,
+                `< : ${val1 < val2}`,
+                `>= : ${val1 >= val2}`,
+                `<= : ${val1 <= val2}`
+            ];
+            document.getElementById("comparisonResult").innerHTML = results.join("<br>");
+        });
+    </script>
+</body>
+</html>
