@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form">
+        <input type="text" id="userinput"  name="day" placeholder="Enter a day (e.g Sunday)">
+        <button onclick="displaydayMessage()">Motivates you 🤝🙌</button>
+        <div class="message" id="dayMessage">
+            <div id="daytext"></div>
+            <div class="emoji" id="dayEmoji" ></div>
+        </div>
+    </div>
+    <script>
+        function displaydayMessage() {
+            const dayMessage = document.getElementById("dayMessage");
+            const daytext = document.getElementById("daytext");
+            const dayEmoji= document.getElementById("dayEmoji");
+            const userinput =document.getElementById("userinput").value.trim().toLowerCase();
+            switch(userinput) {
+                case "monday":
+                    daytext.innerHTML="Start your week strong!” for Monday."
+                    dayEmoji.textContent="🦁💪";
+                break;
+                case "tuesday":
+                    daytext.innerHTML="Keep going!” for Tuesday."
+                    dayEmoji.textContent="🤝🙌";
+                break;
+                case "wednesday":
+                    daytext.innerHTML="Halfway there!” for Wednesday."
+                    dayEmoji.textContent="⛰️🏞️";
+                    break;
+                case "thursday":
+                    daytext.innerHTML="Almost the weekend!!!"
+                    dayEmoji.textContent="😺💃";
+                    break;
+                case "friday":
+                    daytext.innerHTML = "Happy Friday!, The weekend is calling you";
+                    dayEmoji.textContent = "🎊🍹";
+                    break;
+                case "saturday":
+                    daytext.innerHTML="Enjoy your weekend!! Yayyyy"
+                    dayEmoji.textContent="🥳🥂🍹🍕🍨🍸";
+                    break;
+                case "sunday":
+                    daytext.innerHTML = "Chill and relax time to spend with yourself more!!!";
+                    dayEmoji.textContent = "☀️🍃";
+                    break;
+                default:
+                    daytext.textContent = "Please enter a valid day of the week.";
+                    dayEmoji.textContent = "❓";
+
+
+
+            }
+            dayMessage.style.display = "block";
+        }
+    </script>
+</body>
+</html>

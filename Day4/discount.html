@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Heading styling */
+.container h2 {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+/* Input container styling */
+.input-container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Label styling */
+.input-container label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input field styling */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Result styling */
+.result {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Discount Calculator</h2>
+        <div class="input-container">
+        <label for="purchaseAmount">Enter the Purchase Amount($)</label>
+        <input type="number" id="purchaseAmount" name="amount" placeholder="Enter the Amount">
+       </div>
+        <button onclick="calculateDiscount()">Calculate Discount</button>
+        <div class="result" id="discountResult"></div>
+    </div>
+    <script>
+        function calculateDiscount() {
+            const amount=parseFloat(document.getElementById('purchaseAmount').value);
+            let discountMessage ="";
+            if(isNaN(amount) || amount<=0){
+                discountMessage="Please enter a valid purchase amount:";
+            }
+            else if(amount<50){
+                discountMessage="No discount";
+            }
+            else if(amount>=50 && amount<=100){
+                discountMessage="5% discount"
+            }
+            else if(amount>=101 && amount<=200){
+                discountMessage="“10% discount”"
+            }
+            else{
+                discountMessage="“15% discount”"
+            }
+            document.getElementById("discountResult").textContent=discountMessage;
+        }
+    </script>
+</body>
+</html>
