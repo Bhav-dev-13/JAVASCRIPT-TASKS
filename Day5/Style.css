@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Task Box Styling */
+.task-box {
+    background: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.task-box:hover {
+    transform: scale(1.03);
+}
+
+/* Heading Styling */
+.task-box h3 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Buttons */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Input Fields */
+input[type="number"] {
+    padding: 8px;
+    width: 60%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Output Divs */
+.output {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    font-weight: bold;
+    background: #ecf0f1;
+    border-radius: 5px;
+    white-space: pre-line; /* Ensures line breaks in multiplication tables */
+}
+
+/* Multiplication Table Output */
+p#tab {
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    white-space: pre-line;
+    text-align: left;
+}
+
+/* Smooth Transition Effect */
+.task-box, button, input {
+    transition: all 0.3s ease-in-out;
+}
